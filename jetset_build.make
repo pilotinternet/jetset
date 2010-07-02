@@ -15,8 +15,8 @@ projects[pressflow][download][type] = "get"
 projects[pressflow][download][url] = "http://launchpad.net/pressflow/6.x/6.16.77/+download/pressflow-6.16.77.tar.gz"
 
 ;=== Now we go get our JetSet install profile
-projects[jumpjet][type] = "profile"
-projects[jumpjet][download][type] = "git"
-projects[jumpjet][download][url] = "git://github.com/pilotinternet/jetset.git"
+projects[jetset][type] = "profile"
+projects[jetset][download][type] = "git"
+projects[jetset][download][url] = "git://github.com/pilotinternet/jetset.git"
 
 ;=== The install profile contains another makefile which will set everything else up
