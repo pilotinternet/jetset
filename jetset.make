@@ -544,6 +544,7 @@ projects[privatemsg][subdir] = "contrib"
 
 ; ---------------------------------------------------------------------- MESSAGE
 projects[message][subdir] = "contrib"
+projects[message][version] = "1.x-dev"
 
 ; -------------------------------------------------------- FACEBOOK STYLE STATUS
 projects[facebook_status][subdir] = "contrib"
