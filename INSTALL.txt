@@ -1,0 +1,37 @@
+# $Id$
+
+JetSet Install Profile for Drupal
+==================================
+
+For full details of this project, please see README.txt, or the project area at:
+http://atc.pilotinternet.com/jetset
+
+
+===== INSTALLATION INSTRUCTIONS =====
+
+REQUIREMENTS
+============
+To install JetSet you need Drush and Drush_make on your server or localhost.
+Information on these projects and instructions to install them can be found at:
+http://drupal.org/project/drush
+http://drupal.org/project/drush_make
+
+We also recommend using JetSet under Aegir - using JetSet to create a
+'platform' that Aegir then manages and creates sites on.
+
+INSTALLATION
+============
+Navigate to the directory where you would like to build your JetSet platform
+and run the following command:
+
+drush make http://github.com/pilotinternet/jetset/raw/master/jetset_build.make jetset
+
+alternately, you can run:
+wget http://github.com/pilotinternet/jetset/raw/master/jetset_build.make
+
+Then making any changes you wish to make (eg enabling the jetdocs, using
+vanilla Drupal instead of Pressflow etc), and then run:
+drush make jetset_build.make jetset
+
+
+

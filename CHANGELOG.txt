@@ -1,0 +1,6 @@
+# $Id$
+
+JetSet Install profile
+from Pilot Internet
+
+CHANGELOG
