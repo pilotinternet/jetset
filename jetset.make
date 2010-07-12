@@ -570,6 +570,9 @@ projects[user_badges][subdir] = "contrib"
 ; ------------------------------------------------------------ CCK FIELD PRIVACY
 projects[cck_field_privacy][subdir] = "contrib"
 
+; --------------------------------------------------------------------- SHOUTBOX
+projects[shoutbox][subdir] = "contrib"
+
 ; ============================================================================== Modules - Image
 ; -------------------------------------------------------------------- IMAGE API
 projects[imageapi][subdir] = "contrib"
@@ -837,8 +840,13 @@ projects[blocks404][subdir] = "contrib"
 
 ; ============================================================================== FEATURES =================
 
-; Features are coming soon to jumpjet
+projects[news_engine][type] = "module"
+projects[news_engine][download][type] = "git"
+projects[news_engine][download][url] = "git://github.com/pilotinternet/NewsEngine.git"
 
+projects[events_engine][type] = "module"
+projects[events_engine][download][type] = "git"
+projects[events_engine][download][url] = "git://github.com/pilotinternet/EventsEngine.git"
 
 ; ============================================================================== THEMES - Base =================
 

@@ -11,11 +11,17 @@
 function _jetset_set_permissions(&$context) {
 
   // First set up roles
+
+  // Make sure default roles are set right (just in case)
+  db_query("UPDATE {role} SET rid = 1 WHERE name = 'anonymous user'");
+  db_query("UPDATE {role} SET rid = 2 WHERE name = 'authenticated user'");
+
+
   $sitemgr_rid = install_add_role('site manager');
-  $editor_rid = install_add_role('editor');
+  $communitymanager_rid = install_add_role('community manager');
   $moderator_rid = install_add_role('moderator');
-  $contrib_rid = install_add_role('contributor');
   $staff_rid = install_add_role('staff');
+  $member_rid = install_add_role('member');
   $registered_rid = install_add_role('registered');
 
   // The value of each variable is now the role id
@@ -24,6 +30,14 @@ function _jetset_set_permissions(&$context) {
 
   // administrator user is managed by admin_role module
 
+  // Make sure first user is a "Site Manager"
+  db_query("INSERT INTO {users_roles} (uid, rid) VALUES (1, $sitemgr_rid)");
+  // Make sure first user is a "Community Manager"
+  db_query("INSERT INTO {users_roles} (uid, rid) VALUES (1, $communitymanager_rid)");
+
+    // Purge permissions, just in case there are any stored
+  db_query("DELETE FROM {permission}");
+
   // Setup permissions for site manager user
   install_add_permissions($sitemgr_rid, array(
     'access user profiles',
@@ -31,14 +45,24 @@ function _jetset_set_permissions(&$context) {
     'edit any comment content',
     'revert revisions',
     'post comments without approval',
+      'access user profiles',
+      'administer comments',
+      'delete any blog entry',
+      'delete heartbeat activity logs',
   ));
 
-  // Setup permissions for editor user
-  install_add_permissions($editor_rid, array(
+  // Setup permissions for community manager user
+  install_add_permissions($communitymanager_rid, array(
     'create comment content',
     'edit any comment content',
     'revert revisions',
     'post comments without approval',
+      'access user profiles',
+      'administer comments',
+      'delete any blog entry',
+      'delete heartbeat activity logs',
+      'edit any blog entry',
+
   ));
 
   // Setup permissions for moderator user
@@ -47,15 +71,11 @@ function _jetset_set_permissions(&$context) {
     'edit any comment content',
     'revert revisions',
     'post comments without approval',
+      'access user profiles',
+      'administer comments',
+
   ));
 
-  // Setup permissions for contributor user
-  install_add_permissions($contributor_rid, array(
-    'create comment content',
-    'delete own comment content',
-    'edit own comment content',
-    'post comments without approval',
-  ));
 
   // Setup permissions for staff user
   install_add_permissions($staff_rid, array(
@@ -63,15 +83,42 @@ function _jetset_set_permissions(&$context) {
     'delete own comment content',
     'edit own comment content',
     'post comments without approval',
+      'access user profiles',
+      'create blog entries',
+      'edit own blog entries',
+      'delete own blog entries',
+  ));
+
+  // Setup permissions for member user
+  install_add_permissions($member_rid, array(
+    'create comment content',
+    'delete own comment content',
+    'edit own comment content',
+    'post comments without approval',
+      'access user profiles',
+      'can have relationships',
+      'create blog entries',
+      'edit own blog entries',
+      'delete own blog entries',
+      'delete own heartbeat activity logs',
+      'maintain own relationships',
+      'view user relationships',
   ));
 
   // Setup permissions for authenticated user
   install_add_permissions(2, array(
     'access comments',
     'post comments',
+      'post comments without approval',
     'access content',
     'create comment content',
     'search content',
+      'maintain own subscriptions',
+      'manage own subscriptions',
+      'skip notifications',
+      'subscribe to author',
+      'subscribe to content',
+      'view heartbeat messages',
   ));
 
   // Setup permissions for anonymous user

@@ -18,13 +18,17 @@
  * Include files with specialist settings
  */
 require_once dirname(__FILE__) . '/includes/blocks.inc';
+require_once dirname(__FILE__) . '/includes/community.inc';
 require_once dirname(__FILE__) . '/includes/content.inc';
+require_once dirname(__FILE__) . '/includes/filters.inc';
 require_once dirname(__FILE__) . '/includes/menu.inc';
 require_once dirname(__FILE__) . '/includes/modules.inc';
 require_once dirname(__FILE__) . '/includes/pathauto.inc';
 require_once dirname(__FILE__) . '/includes/permissions.inc';
 require_once dirname(__FILE__) . '/includes/settings.inc';
 require_once dirname(__FILE__) . '/includes/taxonomy.inc';
+require_once dirname(__FILE__) . '/includes/wysiwyg.inc';
+
 // The next file is for common customisations for your drupal shop
 require_once dirname(__FILE__) . '/includes/custom.inc';
 
@@ -54,13 +58,13 @@ function jetset_profile_modules() {
 
     /* Optional core modules.*/
     'dblog',
-    //'blog',
+    'blog',
     'comment',
     'contact',
     //'help',
     //'locale',
     'menu',
-    //'openid',
+    'openid',
     'path',
     //'profile',
     'search',
@@ -151,7 +155,10 @@ function jetset_profile_tasks(&$task, $url) {
     $batch['operations'][] = array('_jetset_setup_taxonomy', array());
     $batch['operations'][] = array('_jetset_set_pathauto', array());
     $batch['operations'][] = array('_jetset_install_menus', array());
+    $batch['operations'][] = array('_jetset_setup_filters', array());
     $batch['operations'][] = array('_jetset_setup_blocks', array());
+    $batch['operations'][] = array('_jetset_setup_wysiwyg', array());
+    $batch['operations'][] = array('_jetset_setup_community', array());
     $batch['operations'][] = array('_jetset_custom', array());
     $batch['operations'][] = array('_jetset_cleanup', array());
     $batch['error_message'] = st('There was an error configuring @drupal.', array('@drupal' => drupal_install_profile_name()));
