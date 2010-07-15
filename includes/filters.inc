@@ -40,6 +40,9 @@ function _jetset_setup_filters(&$context) {
   // Let community and content manager role use Full HTML
   db_query("UPDATE {filter_formats} SET roles = ',3,4,' WHERE name = 'Full HTML'");
 
+  // Purge better_formats_defaults, just in case there are any stored
+  db_query("DELETE FROM {better_formats_defaults}");
+
   // Set Full HTML as default format for community and content manager roles
   db_query("INSERT INTO {better_formats_defaults} (rid, type, format, type_weight, weight)
     VALUES (3, 'node', 2, 1, 0)");
