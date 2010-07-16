@@ -242,6 +242,7 @@ projects[date][type] = "module"
 projects[date][download][type] = "cvs"
 projects[date][download][module] = "contributions/modules/date"
 projects[date][download][revision] = "DRUPAL-6--2:2010-05-02"
+; -------------------------------------------------------- PATCHED
 
 ; --------------------------------------------------------------- EMBEDDED FIELD
 projects[emfield][subdir] = "contrib" 
@@ -840,13 +841,15 @@ projects[blocks404][subdir] = "contrib"
 
 ; ============================================================================== FEATURES =================
 
-projects[news_engine][type] = "module"
-projects[news_engine][download][type] = "git"
-projects[news_engine][download][url] = "git://github.com/pilotinternet/NewsEngine.git"
 
-projects[events_engine][type] = "module"
-projects[events_engine][download][type] = "git"
-projects[events_engine][download][url] = "git://github.com/pilotinternet/EventsEngine.git"
+projects[pilot_image_engine][location] = http://code.pilotinternet.com/fserver
+projects[pilot_image_engine][subdir] = "features"
+
+projects[pilot_news_engine][location] = http://code.pilotinternet.com/fserver
+projects[pilot_news_engine][subdir] = "features"
+
+projects[pilot_events_engine][location] = http://code.pilotinternet.com/fserver
+projects[pilot_events_engine][subdir] = "features"
 
 ; ============================================================================== THEMES - Base =================
 
@@ -956,6 +959,12 @@ libraries[getid3lib][directory_name] = getid3
 ; ============================================================================== PATCHES ===============
 ; http://drupal.org/node/830730
 projects[cck][patch][] = http://drupal.org/files/issues/cck_views_default_argument_plugin.patch
+
+; http://drupal.org/node/518816#comment-3008038
+projects[date][patch][] = http://drupal.org/files/issues/518816-5.date_format_date_warnings.patch
+
+; http://drupal.org/node/518816#comment-3027232
+projects[date][patch][] = http://drupal.org/files/issues/date-772180-element-description-1.patch
 
 ; http://drupal.org/node/789556
 projects[features][patch][] = http://drupal.org/files/issues/789556-18_taxonomy.patch
