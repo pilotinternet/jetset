@@ -24,15 +24,13 @@ function _jetset_extra_modules() {
     'context_ui',
 
     // CCK
-    'content_permissions', 
     'fieldgroup',
     'text',
     'filefield',
     'imagefield',
     'optionwidgets',
     'link',
-    'filefield_meta',
-
+    
     // Dates
     'calendar',
     'date_api',
@@ -92,8 +90,9 @@ function _jetset_extra_modules() {
 
 
     // Features
-      'news_engine',
-      'events_engine',
+      'pilot_image_engine',
+      'pilot_news_engine',
+      'pilot_events_engine',
 
   );
   return $custommodules;
