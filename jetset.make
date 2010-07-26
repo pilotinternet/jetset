@@ -532,6 +532,15 @@ projects[role_watchdog][subdir] = "contrib"
 ; ----------------------------------------------------------- ROLE CHANGE NOTIFY
 projects[role_change_notify][subdir] = "contrib"
 
+; ------------------------------------------------------------- AUTO ASSIGN ROLE
+projects[autoassignrole][subdir] = "contrib"
+projects[autoassignrole][version] = "1.2"
+; ---------------------- patched
+
+; ------------------------------------------------------ AUTO ASSIGN ROLE BLOCKS
+projects[autoassignroleblocks][subdir] = "contrib"
+
+
 ; ============================================================================== Modules - Social
 
 ; ----------------------------------------------------------- USER RELATIONSHIPS
@@ -778,6 +787,9 @@ projects[hovertip][subdir] = "contrib"
 ; ----------------------------------------------------------------- CSS INJECTOR
 projects[css_injector][subdir] = "contrib"
 
+; ---------------------------------------------------------------------- APP BAR
+projects[appbar][subdir] = "contrib"
+
 
 ; ============================================================================== Modules - JQuery
 ; ---------------------------------------------------------------- JQUERY UPDATE
@@ -855,11 +867,9 @@ projects[pilot_events_engine][subdir] = "features"
 
 ; ----------------------------------------------------------------------- FUSION
 projects[fusion][subdir] = "base"
-projects[fusion][version] = "1.x-dev"
 
 ; -----------------------------------------------------------------ADAPTIVETHEME
 projects[adaptivetheme][subdir] = "base"
-projects[adaptivetheme][version] = "2.x-dev"
 
 ; -------------------------------------------------------------------------- TAO
 projects[tao][subdir] = "base"
@@ -886,6 +896,11 @@ projects[clean][subdir] = "base"
 projects[rubik][subdir] = "admin"
 projects[rubik][location] = http://code.developmentseed.org/fserver
 
+; -------------------------------------------------------------------- ROOTCANDY
+projects[rootcandy][subdir] = "admin"
+
+; ------------------------------------------------------------------------ SEVEN
+projects[seven][subdir] = "admin"
 
 
 ; ============================================================================== Themes - Frontend
@@ -974,3 +989,6 @@ projects[views][patch][] = http://drupal.org/files/issues/views-3-plugin_display
 
 ; http://drupal.org/node/789674
 projects[views][patch][] = http://drupal.org/files/issues/789674-3_vocabulary_module.patch
+
+; http://drupal.org/node/755308
+projects[autoassignrole][patch][] = http://drupal.org/files/issues/autoassignrole-content-profile-settings.patch
