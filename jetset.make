@@ -68,11 +68,12 @@ projects[tw][subdir] = "dev"
 ; ============================================================================== Modules - Features/Spaces/Context
 ; --------------------------------------------------------------------- FEATURES
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0-beta8"
-; --------------------------------------- PATCHED
+projects[features][version] = "1.0-beta10"
+
 
 ; --------------------------------------------------------------- FEATURES EXTRA
 projects[features_extra][subdir] = "contrib"
+projects[features_extra][version] = "1.x-dev"
 
 ; ---------------------------------------------------------------------- CONTEXT
 projects[context][subdir] = "contrib"
@@ -393,7 +394,7 @@ projects[aef_utilities][subdir] = "contrib"
 ; ============================================================================== Modules - Groups
 ; --------------------------------------------------------------------------- OG
 projects[og][subdir] = "contrib"
-
+projects[og][version] = "2.x-dev"
 
 ; ============================================================================== Modules - Panels
 ; ----------------------------------------------------------------------- PANELS
@@ -565,11 +566,10 @@ projects[fbssc][version] = "1.x-dev"
 
 ; ------------------------------------------------------------------ AUTHOR PANE
 projects[author_pane][subdir] = "contrib"
-projects[author_pane][version] = "2.0-alpha2"
+projects[author_pane][version] = "2.0-beta1"
 
 ; ---------------------------------------------------------------------- APP BAR
 projects[appbar][subdir] = "contrib"
-projects[appbar][version] = "1.x-dev"
 
 ; ------------------------------------------------------------------- USER STATS
 projects[user_stats][subdir] = "contrib"
@@ -643,15 +643,25 @@ projects[xmlsitemap][subdir] ="contrib"
 ; ============================================================================== Modules - Messaging/Notifications
 ; -------------------------------------------------------------------- MESSAGING
 projects[messaging][subdir] = "contrib"
+projects[messaging][version] = "4.0-beta6"
 
 ; ---------------------------------------------------------------- NOTIFICATIONS
 projects[notifications][subdir] = "contrib"
+projects[notifications][version] = "4.0-beta6"
+
+; ---------------------------------------------------------- NOTIFICATIONS EXTRA
+projects[notifications_extra][subdir] = "contrib"
+projects[notifications_extra][version] = "4.0-beta5"
+
+; -------------------------------------------------------------------- AUTO LOAD
+projects[autoload][subdir] = "contrib"
 
 ; ------------------------------------------------------------------ MAILHANDLER
 projects[mailhandler][subdir] = "contrib"
 
 ; ------------------------------------------------------------------ MAILCOMMENT
 projects[mailcomment][subdir] = "contrib"
+projects[mailcomment][version] = "1.x-dev"
 
 ; --------------------------------------------------------------------- MIMEMAIL
 projects[mimemail][subdir] = "contrib"
@@ -661,7 +671,6 @@ projects[mimedetect][subdir] = "contrib"
 
 ; ------------------------------------------------------------------ MIME ROUTER
 projects[mimerouter][subdir] = "contrib"
-projects[mimerouter][version] = "1.0"
 
 ; ------------------------------------------------------------ EMAIL NEWSLETTERS
 projects[enewsletter][subdir] = "contrib"
@@ -713,18 +722,18 @@ projects[browscap][subdir] = "contrib"
 
 ; --------------------------------------------------------------------- LOCATION
 projects[location][subdir] = "contrib"
-projects[location][version] = "3.x-dev"
 
 ; ------------------------------------------------------------------------- GMAP
 projects[gmap][subdir] = "contrib"
-projects[gmap][version] = "1.x-dev"
+
 
 ; ============================================================================== Modules - Wysiwyg
 ; ------------------------------------------------------------------ WYSIWYG API
 projects[wysiwyg][subdir] = "contrib"
 
 ; ----------------------------------------------------------------------- INSERT
-;projects[insert][subdir] = "contrib"
+projects[insert][subdir] = "contrib"
+projects[insert][version] = "1.0-beta5"
 
 ; ------------------------------------------------------------------------- IMCE
 projects[imce][subdir] = "contrib"
@@ -982,7 +991,8 @@ projects[date][patch][] = http://drupal.org/files/issues/518816-5.date_format_da
 projects[date][patch][] = http://drupal.org/files/issues/date-772180-element-description-1.patch
 
 ; http://drupal.org/node/789556
-projects[features][patch][] = http://drupal.org/files/issues/789556-18_taxonomy.patch
+; projects[features][patch][] = http://drupal.org/files/issues/789556-18_taxonomy.patch
+; REMOVED due to module upgrade
 
 ; http://drupal.org/node/792184
 projects[views][patch][] = http://drupal.org/files/issues/views-3-plugin_display-option_defaults-792184.patch
