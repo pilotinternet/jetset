@@ -57,16 +57,16 @@ function _jetset_extra_modules() {
     'imagecache_canvasactions',
 
     // Messaging
-    'messaging', 
-    'messaging_mail',
-    'messaging_simple',
+    //'messaging',
+    //'messaging_mail',
+    //'messaging_simple',
 
     // Notifications
-    'notifications',
-    'notifications_autosubscribe',
-    'notifications_content',
-    'notifications_ui', 
-    'notifications_views',
+    //'notifications',
+    //'notifications_autosubscribe',
+    //'notifications_content',
+    //'notifications_ui',
+    //'notifications_views',
 
     // Heartbeat Activity Stream
     'heartbeat',
@@ -86,8 +86,16 @@ function _jetset_extra_modules() {
     'better_formats',
     'insert',
 
-    // Add more modules if necessary
-
+    // Other
+    'autoassignrole',
+      'auto_nodetitle',
+      'content_profile',
+      'og',
+      'og_access',
+      'og_actions',
+      'og_views',
+      'rules',
+      'workflow',
 
     // Features
       'pilot_image_engine',

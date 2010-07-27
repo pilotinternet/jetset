@@ -113,11 +113,11 @@ function _jetset_set_permissions(&$context) {
     'access content',
     'create comment content',
     'search content',
-      'maintain own subscriptions',
-      'manage own subscriptions',
-      'skip notifications',
-      'subscribe to author',
-      'subscribe to content',
+     // 'maintain own subscriptions',
+     // 'manage own subscriptions',
+    //  'skip notifications',
+    //  'subscribe to author',
+    //  'subscribe to content',
       'view heartbeat messages',
   ));
 
